@@ -1,0 +1,32 @@
+import RectLike from './rtree/rect-like';
+export default class RTree {
+    private Min_Width;
+    private Max_Width;
+    private idCache;
+    x: number;
+    y: number;
+    w: number;
+    h: number;
+    id: string;
+    nodes: RTree[];
+    leaf: any;
+    load: any;
+    target: any;
+    private static isArray(o);
+    constructor(width?: number);
+    private name_to_id(idPrefix);
+    private remove_subtree;
+    private choose_leaf_subtree(rect);
+    private pick_next(nodes, a, b);
+    private pick_linear(nodes);
+    private linear_split(nodes);
+    private attach_data(tree);
+    private search_subtree(rect, return_node, return_array);
+    private insert_subtree(node);
+    get_tree(): RTree;
+    set_tree(new_tree: RTree): RTree;
+    search(rect: RTree, return_node?: boolean, return_array?: RTree[]): RTree[];
+    toJSON(rect: RectLike, tree: RTree): string;
+    remove(rect: RectLike, obj: any): RTree[];
+    insert(rect: RectLike, obj: any): void;
+}
